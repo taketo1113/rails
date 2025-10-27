@@ -1,3 +1,11 @@
+*   Add `Rails::CodeStatistics#register_extension` to register file extensions for `rails stats`
+
+    ```ruby
+    Rails::CodeStatistics.register_extension("txt")
+    ```
+
+    *Taketo Takashima*
+
 *   Do not assume and force SSL in production by default when using Kamal, to allow for out of the box Kamal deployments.
 
     It is still recommended to assume and force SSL in production as soon as you can.
