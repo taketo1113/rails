@@ -14,6 +14,9 @@ class Rails::Command::NotesTest < ActiveSupport::TestCase
     app_file "lib/some_file.rb", "# TODO: note in lib directory"
     app_file "test/some_test.rb", "\n" * 100 + "# FIXME: note in test directory"
 
+    app_file "app/views/test.html.erb", "<%# TODO: note in views directory %>"
+    app_file "app/views/test_jp.html.erb", "<%# TODO: テスト in views directory %>"
+
     app_file "some_other_dir/blah.rb", "# TODO: note in some_other directory"
 
     assert_equal <<~OUTPUT, run_notes_command
